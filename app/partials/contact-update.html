@@ -1,0 +1,110 @@
+<div class="container-fluid">
+<form  novalidate name="updateContactForm" class="form-horizontal">
+
+ <div class="modal-body">
+      <div class="form-group" >
+          <div class="col-sm-offset-2">
+            <h3 >Edit Contact:</h3>  
+	       </div>
+        </div>
+        <div class="form-group" >
+  		    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+        </div>
+	   <div class="form-group" >
+           <label for="inputFirstName" class="col-sm-2 control-label" >First Name:</label>
+           <div class="col-sm-4">
+                <input type="text" ng-model="contact.firstName" name="firstName"  class="form-control" id="inputFirstName" placeholder="First Name" ng-required ng-minlength="3" ng-maxlength="100">
+                <div ng-if="updateContactForm.firstName.$invalid" ng-messages="updateContactForm.firstName.$error">
+                    <div ng-message="required" class="text-danger">Required!</div>
+                    <div ng-message="minlength" class="text-danger">This field must be at least 3 chars long!</div>
+                    <div ng-message="maxlength" class="text-danger">This field must be at most 100 chars long!</div>
+               </div>
+            </div>
+       </div>
+	   <div class="form-group" >
+            <label for="inputLastName" class="col-sm-2 control-label" >Last Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" ng-model="contact.lastName" name="lastName"  class="form-control" id="inputLastName" placeholder="Last Name"  ng-required ng-minlength="3" ng-maxlength="100">
+                <div ng-if="updateContactForm.lastName.$invalid" ng-messages="updateContactForm.lastName.$error">
+                    <div ng-message="required" class="text-danger">Required!</div>
+                    <div ng-message="minlength" class="text-danger">This field must be at least 3 chars long!</div>
+                    <div ng-message="maxlength" class="text-danger">This field must be at most 100 chars long!</div>
+               </div>
+                </div>
+
+        </div>
+        <div class="form-group" >
+            <label for="inputEmail" class="col-sm-2 control-label" >Email:</label>
+                <div class="col-sm-4">
+                    <input type="text" ng-model="contact.email" name="email" class="form-control" id="inputEmail" placeholder="Email"  ng-required ng-minlength="3" ng-maxlength="100">
+                <div ng-if="updateContactForm.email.$invalid" ng-messages="updateContactForm.email.$error">
+                    <div ng-message="required" class="text-danger">Required!</div>
+                    <div ng-message="minlength" class="text-danger">This field must be at least 3 chars long!</div>
+                    <div ng-message="maxlength" class="text-danger">This field must be at most 100 chars long!</div>
+               </div>
+                </div>
+        </div>
+        <div class="form-group" >
+            <label for="inputPhone" class="col-sm-2 control-label" >Phone:</label>
+                <div class="col-sm-4">
+                    <input type="text" ng-model="contact.phone" name="phone" class="form-control" id="inputPhone" placeholder="Phone"  ng-required ng-minlength="3" ng-maxlength="50">
+                <div ng-if="updateContactForm.phone.$invalid" ng-messages="updateContactForm.phone.$error">
+                    <div ng-message="required" class="text-danger">Required!</div>
+                    <div ng-message="minlength" class="text-danger">This field must be at least 3 chars long!</div>
+                    <div ng-message="maxlength" class="text-danger">This field must be at most 50 chars long!</div>
+               </div>
+                </div>
+        </div>
+        <div class="form-group" >
+            <label for="inputCellphone" class="col-sm-2 control-label" >Cellphone:</label>
+                <div class="col-sm-4">
+                    <input type="text" ng-model="contact.cellphone" name="cellphone"  class="form-control" id="inputCellphone" placeholder="Cellphone"  ng-required ng-minlength="3" ng-maxlength="50">
+                <div ng-if="updateContactForm.cellphone.$invalid" ng-messages="updateContactForm.cellphone.$error">
+                    <div ng-message="required" class="text-danger">Required!</div>
+                    <div ng-message="minlength" class="text-danger">This field must be at least 3 chars long!</div>
+                    <div ng-message="maxlength" class="text-danger">This field must be at most 50 chars long!</div>
+               </div>
+                </div>
+        </div>
+         <div class="form-group" >
+            <label for="inputAddress" class="col-sm-2 control-label" >Address:</label>
+                <div class="col-sm-4">
+                    <input type="text" ng-model="contact.address" name="address"  class="form-control" id="inputAddress" placeholder="Address"  ng-required ng-minlength="3" ng-maxlength="100">
+                <div ng-if="updateContactForm.address.$invalid" ng-messages="updateContactForm.address.$error">
+                    <div ng-message="required" class="text-danger">Required!</div>
+                    <div ng-message="minlength" class="text-danger">This field must be at least 3 chars long!</div>
+                    <div ng-message="maxlength" class="text-danger">This field must be at most 100 chars long!</div>
+               </div>
+                </div>
+        </div>
+        <div class="form-group" >
+            <label for="inputCity" class="col-sm-2 control-label" >City:</label>
+                <div class="col-sm-4">
+                    <input type="text" ng-model="contact.city"  name="city" class="form-control" id="inputCity" placeholder="City"  ng-required ng-minlength="3" ng-maxlength="100">
+                <div ng-if="updateContactForm.city.$invalid" ng-messages="updateContactForm.city.$error">
+                    <div ng-message="required" class="text-danger">Required!</div>
+                    <div ng-message="minlength" class="text-danger">This field must be at least 3 chars long!</div>
+                    <div ng-message="maxlength" class="text-danger">This field must be at most 100 chars long!</div>
+               </div>
+                </div>
+        </div>
+         <div class="form-group" >
+            <label for="inputCountry" class="col-sm-2 control-label" >Country:</label>
+                <div class="col-sm-4">
+                    <input type="text" ng-model="contact.country" name="country" class="form-control" id="inputCountry" placeholder="Country"  ng-required ng-minlength="3" ng-maxlength="100">
+                <div ng-if="updateContactForm.country.$invalid" ng-messages="updateContactForm.country.$error">
+                    <div ng-message="required" class="text-danger">Required!</div>
+                    <div ng-message="minlength" class="text-danger">This field must be at least 3 chars long!</div>
+                    <div ng-message="maxlength" class="text-danger">This field must be at most 100 chars long!</div>
+               </div>
+                </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-2">
+                <button type="submit" class="btn btn-default btn-sm" ng-disabled="updateContactForm.$invalid" ng-click= "updateContact(contact)">Update</button>
+
+            </div>
+        </div>
+     </div>
+</form>
+</div>
